@@ -1,0 +1,15 @@
+#feedback { font-size: 1.4em; }
+  #choice .ui-selecting { background: #FECA40; }
+  #choice .ui-selected { background: #F39814; color: white; }
+  #choice { list-style-type: none; margin: 0; padding: 0; width: 150px; }
+  #choice li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  #metal{background:blue;}
+  #poly{background:red;}
+  #contact{background:black;color: white;}
+  #active{background:darkgreen;}
+  #nwell{background:yellow;}
+  #nselect{background:lightblue;}
+  #pselect{background:purple;}
+  h1{
+      text-align: center;
+  }
