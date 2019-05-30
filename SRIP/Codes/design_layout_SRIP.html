@@ -1,29 +1,68 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design Layout</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <link rel="stylesheet" href="designLayoutSRIP.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="dlsrip.js"></script>
+		<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+	<title>design_layout_SRIP</title>
+	<link rel="stylesheet" type="text/css" href="design_layout_SRIP.css">
+	<script src="design_layout_SRIP.js"></script>
+
+	
 </head>
+
+
 <body>
-  <h1>Layout Editor</h1>
- 
-<ol id="choice">
-  <li class="ui-widget-content" id="metal">metal</li>
-  <li class="ui-widget-content" id="poly">poly</li>
-  <li class="ui-widget-content" id="contact">contact</li>
-  <li class="ui-widget-content" id="active">active</li>
-  <li class="ui-widget-content" id="nwell">N well</li>
-  <li class="ui-widget-content" id="nselect">N select</li>
-  <li class="ui-widget-content" id="pselect">P select</li>
-</ol>
- 
- 
+	<h1 id="heading">Design Layout</h1>
+	<div id="freeze_and_check_button">
+		<button class="btn"> Freeze component size</button>
+		<button class="btn"> Check DRC rules</button>
+	</div>
+
+	<table id="one">
+		<tr>
+			<th align="left">
+				<h4 id="toolhead">Tool Box</h4><br>
+				<div id="selectedIcon">Selected Icon</div><br>
+				<img id="currentIcon" src="images/comp0.gif" style="width:40px;height:40px;"><br>
+				<div id="smallheadings">Available icons </div><br><br>
+
+				<table>
+					<tr>
+					 	<td><img class="componentButton metal" onclick="makeOnCanvas('metal')" src="images/comp1.gif" style="width:40px;height:40px;"></td>
+						<td><img class="componentButton nwell" onclick="makeOnCanvas('nwell')" src="images/comp5.gif"style="width:40px;height:40px;"></td>
+					</tr>
+					<tr>
+						<td><img class="componentButton poly" onclick="makeOnCanvas('poly')" src="images/comp2.gif" style="width:40px;height:40px;"></td>
+						 <td><img class="componentButton nselect" onclick="makeOnCanvas('nselect')"  src="images/comp6.gif"style="width:40px;height:40px;"></td>
+					 </tr>
+					<tr>
+					 	<td><img class="componentButton contact" onclick="makeOnCanvas('contact')" src="images/comp3.gif"  style="width:40px;height:40px;"></td>
+					  	<td><img class="componentButton pselect" onclick="makeOnCanvas('pselect')" src="images/comp7.gif" style="width:40px;height:40px;"></td>
+					  </tr>
+					<tr>
+					 	<td><img class="componentButton active" onclick="makeOnCanvas('active')" src="images/comp4.gif" style="width:40px;height:40px;"></td>
+					  	<td><img class="componentButton via" onclick="makeOnCanvas('via')" src="images/comp8.gif" style="width:40px;height:40px;"></td>
+					</tr>
+				</table>
+			</th>
+
+			<th>
+				<canvas id="myCanvas" width="800px" height="500px" style="border:1px solid #d3d3d3;">
+					Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+
+
+
+
+
+			</th>
+
+
+
+		</tr>
+
+
 </body>
 </html>

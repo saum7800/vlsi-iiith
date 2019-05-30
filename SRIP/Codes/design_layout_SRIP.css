@@ -1,0 +1,98 @@
+#heading{
+	background-color: black;
+	color:white;
+	text-align: center;
+	border-style: solid;
+    border-color: blue;
+    border-width: 3 px;
+    
+}
+
+.btn {
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color:lightblue;
+  text-align: center;
+}
+#freeze_and_check_button {
+	text-align: center;
+
+} 
+
+#one{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin:10px;
+
+}
+
+th{
+	vertical-align: top;
+	min-width:80px;
+	padding: 5px;
+	border: 1px solid black;
+	height:500px;
+}
+
+#toolhead{
+	background-color: black;
+	color: white;
+	text-align: center;
+	border-style: solid;
+    border-color: blue;
+    border-width: 3 px;
+}
+td{
+	border: 1px solid black;
+	padding: 5px;
+
+}
+
+.componentButton{
+	
+	background: #F4E57F;
+	color: #565527;
+	border-radius: 5px 5px 5px 5px;
+	margin: 3px;
+	border: solid;
+	cursor: crosshair;
+	border-width: 2px;
+	z-index: 2;
+	padding:5px;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	
+
+
+}
+
+.componentButton:hover{
+	background: #ffff55;
+}
+
+.button{
+	background-color: #ffaa00;
+	padding:5px;
+	margin:3px;
+	border-radius:5px;
+	cursor: pointer;
+	align-content: left;
+
+}
+#smallheadings{
+	text-align:left;
+
+}
+
+/*#myCanvas {
+    border: 1px dotted #9C9898;
+    height:500px;
+    width:800px;
+    margin: 2px
+    overflow:auto;
+}*/
+
