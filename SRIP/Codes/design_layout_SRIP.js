@@ -1,5 +1,18 @@
+/*metal   0
+  nwell   1
+  poly    2 
+  nselect 3
+  contact 4
+  pselect 5
+  active  6
+*/
+
+
+
+
 var canvas;
-var k = [-1, -1, -1, -1, -1, -1, -1];
+var overlapLength;
+var k = [-1,-1,-1,-1,-1,-1,-1];
 var metal = [];
 var nwell = [];
 var poly = [];
@@ -104,24 +117,41 @@ function makeOnCanvas(comp) {
 function checkDRC() {
     var i, j;
     var lambda = 1000000;
+    for(i=0;i<7;i++)
+    {
+        for(j=0;j<=k[i];j++)
+        {
+            components[i][j].width=components[i][j].width*components[i][j].scaleX;
+        }
+    }
     alert(k[0]);
     for (j = 0; j <= k[0]; j++) {
         if (metal[j].width < lambda) {
             lambda = metal[j].width;
+            //alert(lambda);
         }
 
     }
     lambda = lambda / 3;
     lambda--;
-    alert("lambda");
+    //alert("lambda");
     var checkMinWidth = minWidth(lambda)
-    if(checkMinWidth==true)
+    var checkMosfetLayout = mosfetLayout(lambda);
+    if(checkMinWidth==true&&checkMosfetLayout==true)
     {
-        alert("good job!");
+        alert("good job!the layout satisifes the DRC rules");
     }
     else
     {
-        alert("bad job!");
+        alert("The layout does NOT satisfy the DRC rules correctly");
+        if(checkMinWidth==false)
+        {
+            alert("min width and spacing is false");
+        }
+        if(checkMosfetLayout==false)
+        {
+            alert("mosfet layout is flase");
+        }
     }
     
 
@@ -140,8 +170,8 @@ function minWidth(lambda) {
                     }
                     for(l=j+1;l<=k[i];l++)
                     {
-                        var spacing=components[i][j].left+components[i][j].width-components[i][l].left;
-                        if(Math.abs(spacing)<lambda*2)
+                        var spacing=spaceBetween(i,j,i,l);
+                        if(spacing<lambda*2&&(overlap(i,j,i,l)==false))
                         {
                             return false;
                         }
@@ -157,8 +187,8 @@ function minWidth(lambda) {
                     }
                     for(l=j+1;l<=k[i];l++)
                     {
-                        var spacing=components[i][j].left+components[i][j].width-components[i][l].left;
-                        if(Math.abs(spacing)<lambda*3)
+                        var spacing=spaceBetween(i,j,i,l);
+                        if(spacing<lambda*3&&(overlap(i,j,i,l)==false))
                         {
                             return false;
                         }
@@ -171,6 +201,159 @@ function minWidth(lambda) {
     }
     return true;
 }
+
+function mosfetLayout(lambda)
+{//poly=2,active=6
+    if(polyActiveRules(lambda)==true&&polyContact(lambda)==true)
+    {
+        return true;
+    }
+    else
+    {
+       /* if(polyActiveRules(lambda)==false)
+        {
+            alert("poly active rules false");
+        }
+        if(polyContact(lambda)==false)
+        {
+            alert("polyContact(lambda)==false")
+        }*/
+        return false;
+    }
+    
+}
+
+function polyActiveRules(lambda)
+{
+    var i,j;
+    for(i=0;i<=k[2];i++)
+    {
+        for(j=0;j<=k[6];j++)
+        {
+            if(overlap(2,i,6,j)==true&&overlapLength<2*lambda)
+            {
+                return false;
+            }
+            else if((overlap(2,i,6,j)==false)&&spaceBetween(2,i,6,j)<lambda)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+function polyContact(lambda)
+{//contact=4,poly=2
+    var i,j,flag;
+    for(i=0;i<=k[4];i++)
+    {
+        flag=0;
+        for(j=0;j<=k[2];j++)
+        {
+            if(components[4][i].left-components[2][j].left>=2*lambda&&components[2][j].left+components[2][j].width-components[4][i].left-components[4][i].width>=2*lambda&&components[4][i].top-components[2][j].top>=2*lambda&&components[2][j].top+components[2][j].height-components[4][i].top-components[4][i].height)
+            {
+               flag=1; 
+            }
+        }
+        for(j=0;j<=k[6];j++)
+        {
+            /*alert("reached here1");
+            alert(components[4][i].left-components[6][j].left);
+            alert(components[6][j].left+components[6][j].width-components[4][i].left-components[4][i].width);
+            alert(components[4][i].top-components[6][j].top);
+            alert(components[6][j].top+components[6][j].height-components[4][i].top-components[4][i].height);*/
+            if((components[4][i].left-components[6][j].left>=2*lambda)&&(components[6][j].left+components[6][j].width-components[4][i].left-components[4][i].width>=2*lambda)&&(components[4][i].top-components[6][j].top>=2*lambda)&&(components[6][j].top+components[6][j].height-components[4][i].top-components[4][i].height))
+            {
+               flag=1; 
+            }
+        }
+        /*alert(flag);        
+        alert(lambda);*/
+        if(flag==0)
+        {
+            return false;
+        }
+    }
+    return true;
+
+}
+
+
+function spaceBetween(i1,j,i2,l)
+{
+    var spacing=0;
+    if(components[i1][j].left<components[i2][l].left)
+    {
+        spacing= Math.abs(components[i1][j].left+components[i1][j].width-components[i2][l].left);
+    }
+    else
+    {
+        spacing= Math.abs(components[i2][l].left+components[i2][l].width-components[i1][j].left);
+    }
+    return spacing;
+}
+
+function overlap(i1,j,i2,l)
+{
+    var top1=components[i1][j].top;
+    var down1=components[i1][j].top+components[i1][j].height;
+    var left1=components[i1][j].left;
+    var right1=components[i1][j].left+components[i1][j].width;
+    var top2=components[i2][l].top;
+    var down2=components[i2][l].top+components[i2][l].height;
+    var left2=components[i2][l].left;
+    var right2=components[i2][l].left+components[i2][l].width;
+    if(left1<left2)
+    {
+        if(left2>right1)
+        {
+            return false;
+        }
+        else if(down2<top1)
+        {
+            return false;
+        }
+        else if(down1<top2)
+        {
+            return false;
+        }
+        else
+        {
+            if(right2<left1)
+            {
+                overlapLength=right2-left2;
+            }
+            else
+            {
+                overlapLength=right1-left2;
+            }
+            return true;
+        }
+    }
+    else
+    {
+        if(left1>right2)
+        {
+            return false;
+        }
+        else if(down1<top2)
+        {
+            return false;
+        }
+        else if(down2<top1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+}
+
+
 
 
 
