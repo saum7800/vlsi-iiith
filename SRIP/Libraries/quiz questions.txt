@@ -1,0 +1,221 @@
+1. Circuit design concepts can also be represented using symbolic diagram.
+a) true
+b) false
+Answer: a
+Explanation: Circuit design concepts can be represented using stick diagrams and symbolic diagrams. Stick diagrams represents different layers with color codes. Symbolic diagram represents the structure with symbols with color codes.
+
+2. Circuit designers need _______ circuits
+a) tighter
+b) smaller layout
+c) decreased silicon area
+d) all of the mentioned
+nswer: d
+Explanation: Circuit designers in general prefer tighter, smaller layouts for improved performance and decreased silicon area.
+
+3. Process engineers want ______ process
+a) smaller
+b) tighter
+c) reproducible
+d) non reproducible
+Answer: c
+Explanation: Process engineers wants design rules which are controllable and reproducible process. 
+
+4. Maturity level of the process line affects design rules.
+a) true
+b) false
+Answer: a
+Explanation: Yes, the maturity level of the process line affects design rules.
+
+5. Design rules does not specify
+a) linewidths
+b) separations
+c) extensions
+d) colours
+Answer: d
+Explanation: Design rules specify line widths, separations and extensions in terms of lambda.
+
+6. The width of n-diffusion and p-diffusion layer should be
+a) 3λ
+b) 2λ
+c) λ
+d) 4λ
+Answer: b
+Explanation: The width of n-diffusion and p-diffusion should be 2λ according to design rules.
+
+7. What should be the spacing between two diffusion layers?
+a) 4λ
+b) λ
+c) 3λ
+d) 2λ
+Answer: c
+Explanation: The spacing between two diffusion layers should be 3λ according to design rules and standards.
+
+8. What should be the width of metal 1 and metal 2 layers?
+a) 3λ, 3λ
+b) 2λ, 3λ
+c) 3λ, 4λ
+d) 4λ, 3λ
+Answer: c
+Explanation: The width of the metal 1 layer should be 3λ and metal 2 should be 4λ.
+
+9. Implant should extend _______ from all the channels
+a) 2λ
+b) 3λ
+c) 4λ
+d) λ
+Answer: a
+Explanation: Implant for a n-mos depletion mode transistor should extend minimum of 2λ from the channel in all the directions.
+
+10. Which type of contact cuts are better?
+a) buried contacts
+b) butted contacts
+c) butted & buried contacts
+d) none of the mentioned
+Answer: a
+Explanation: Buried contacts are much better than butted contacts. In butted contacts the two layers are joined together or binded together using adhesive type of material where as in buried contact one layer is interconcted or fitted into another.
+
+11. Which design method occupies or uses lesser area?
+a) lambda rules
+b) micron rules
+c) layer rule
+d) source rule
+Answer: b
+Explanation: Micron rules occupies or consumes lesser area. 50% of the area usage can be reduced by using micron rules over lambda rules.
+
+12. Which gives scalable design rules?
+a) lambda rules
+b) micron rules
+c) layer rules
+d) thickness rules
+Answer: a
+Explanation: Lambda rules gives scalable design rules and micron rules gives absolute dimensions.
+
+13. Devices designed with lambda design rules are prone to shorts and opens.
+a) true
+b) false
+Answers: b
+Explanation: Lambda design rules prevents shorting, opens, contact from slipping out of area to be contacted.
+
+1. Diffusion and polysilicon layers are connected together using
+a) butting contact
+b) buried contact
+c) separate contact
+d) cannot be connected
+View Answer
+Answer: a
+Explanation: Diffusion and polysilicon layer are joined together using butting contact. In butting contact the two layers are joined or binded together.
+
+2. Which is more complex process?
+a) buried contact
+b) butting contact
+c) buried & butting contact
+d) none of the mentioned
+View Answer
+Answer: a
+Explanation: Butting contact is complex process whereas buried contact is simple process because butting contact should be done more carefully to serve well and be strong.
+
+3. Which contact cut occupies smaller area?
+a) buried contact
+b) butting contact
+c) buried & butting contact
+d) none of the mentioned
+View Answer
+Answer: a
+Explanation: Buried contact occupies smaller area than butting contact as in buried contacts one layer will be completely within or almost within the another layer.
+
+4. Isolation layer between two metal layers must be thinner.
+a) true
+b) false
+View Answer
+Answer: b
+Explanation: Isolation layer between two metal layers should be thicker. Metal to metal separation is large and is brought about mainly by difficulties in defining metal edges accurately.
+
+5. The oxide layer below the first metal layer is deposited using
+a) diffusion method
+b) chemical vapour deposition
+c) solid deposition
+d) scattering method
+View Answer
+Answer: b
+Explanation: The oxide layer below the first metal layer is depostied using chemical vapour deposition method. This is a chemical process used to produce high quality high performance solid materials.
+
+6. Which layer is used for power and signal lines?
+a) metal
+b) polysiicon
+c) n-diffusion
+d) p-diffusion
+View Answer
+Answer: a
+Explanation: Metal layers are used for power and signal lines as metals has good thermal and electrical conductivity.
+
+7. Minimum feature size for thick oxide is
+a) 2λ
+b) 3λ
+c) 4λ
+d) λ
+View Answer
+Answer: b
+Explanation: The minimum feature size for thick oxide is 3λ and minimum separation between thinox regions is also 3λ.
+
+8. Hatching is compatible with
+a) monochrome encoding
+b) bicode encoding
+c) tricode encoding
+d) not compatible with any encoding
+View Answer
+Answer: a
+Explanation: Hatching is compatible with monochrome encoding and also may be added to color mask coding. It is designed using closely spaced lines or sticks.
+
+9. Minimum n-well width should be ____ micro meter
+a) 2
+b) 3
+c) 4
+d) 6
+View Answer
+Answer: b
+Explanation: The minimum width of n-well is 3 micro meter because n-well should be with little thickness and in it p-type devices are formed.
+
+10. The minimum spacing between two n-well is _____ micro meter
+a) 4
+b) 5
+c) 8
+d) 8.5
+View Answer
+Answer: d
+Explanation: The minimum spacing between two n-well is 8.5 micro meter according to the lambda based design rules.
+advertisement
+
+11. Which can bring about variations in threshold voltage?
+a) oxide thickness
+b) ion implantation
+c) poly variations
+d) all of the mentioned
+View Answer
+Answer: d
+Explanation: One of the problem in the manufacture using design rule is that variation in threshold voltage occurs. And this is caused by oxide thickness, ion implantation and poly variations.
+
+12. Advantages of design rules are
+a) durable
+b) scalable
+c) portable
+d) all of the mentioned
+View Answer
+Answer: d
+Explanation: Some of the advantages of generalised design rules are those are durable, scalable, portable, increases designer efficiency and automatic translation to final layout can be done.
+
+13. Minimum diffusion space is
+a) 2λ
+b) 3λ
+c) 4λ
+d) λ
+View Answer
+Answer: b
+Explanation: Minimum diffusion space is 3λ to avoid the possibility of their associated regions overlapping and conducting current.
+
+14. Contact cuts should be ____ apart
+a) 2λ
+b) 3λ
+c) 4λ
+d) λ
+Answer: a
+Explanation: Two contact cuts should be 2λ apart to prevent holes from merging.

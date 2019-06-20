@@ -1,0 +1,16 @@
+issue: width and height of shapes not getting updated but x and y coordinates getting updated.
+status: fixed
+
+issue: HTML-javascript linking problems.
+status: fixed
+
+issue: via should not be allowed to be used for experiment.
+status: fixed
+
+issue:all buttons should produce their respective components only.
+status: fixed
+
+issue:rotation of the shape should not be allowed.
+status: fixed
+
+
