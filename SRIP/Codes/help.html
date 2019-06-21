@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Design Layout Help
+        </title>
+        <link rel="stylesheet" type="text/css" href="help.css">
+    </head>
+    <body>
+        <h1 id="heading">Help</h1>
+        <p>
+            On the simulator page, there are 10 buttons.<br> 8 of the 10 buttons are for the various components that may be used.<br>
+The components used are Metal-1, Active, Contact, Poly, N-well, N-select, P-select and via.<br>
+The 2 remaining buttons are "clear all" and "check DRC".
+        </p>
+        <h3>Procedure for use</h3>
+        <ol id="ol">
+            <li> Click on the button for any of the components. You will see that component appear on the canvas to the right of the buttons.</li>
+            <br>
+            <li> Click on the component that just appeared. You will see 8 small squares on the component.<br> 4 on the corners and 4 at the middle points of the sides of the rectangle.</li>
+            <br>
+            <li> Press and drag the corner squares to resize the component without changing the aspect ratio of the component.</li>
+            <br>
+            <li> Press and drag the mid-point squares to resize the component by changing height or width only in direction of dragging.</li>
+            <br>
+            <li> Press and drag anywhere else on the component to change it's position on the canvas.</li>
+            <br>
+            <li> Click on the button of any component. New component will appear on the canvas and you may manipulate it's position and size<br> in the same way as shown in steps 3,4 and 5.</li>
+            <br>
+            <li> Make the layout design using the components.</li>
+            <br>
+            <li> Click on the " Check DRC " button to check if the layout made satisfies the design layout rules correctly.</li>
+            <br>
+            <li> You will get an alert which will tell you if DRC rules are satisfied or not.</li>
+            <br>
+            <li> If DRC rules are not satisfied, you will also get an alert to tell you which specific DRC rule has been violated.</li>
+            <br>
+            <li> Click the " clear all " button to start making and testing a new layout.</li>
+        </ol>
+        <h3>SOME DEFINED RULES :</h3><br>
+			    Description	 :	                       L-Rule	<br><br>
+			Minimum active area width			:	3 L	<br>
+			Minimum active area spacing			:	3 L	<br>
+ 			Minimum poly width				:	2 L	<br>
+			Minimum poly spacing				:	2 L	<br>
+			Minimum gate extension of poly over active 	:	2 L	<br>
+
+			Minimum poly-active edge spacing 		:	1 L	<br>
+			(poly outside active area)					<br>
+			Minimum poly-active edge spacing 		:	3 L 	<br>
+			(poly inside active area)					<br>
+			Minimum metal width				:	3 L	<br>
+			Minimum metal spacing				:	3 L	<br>
+			Poly contact size				:	2 L	<br>
+			Minimum poly contact spacing			:	2 L	<br>
+			Minimum poly contact to poly edge spacing	:	1 L	<br>
+			Minimum poly contact to metal edge spacing	:	1 L	<br>
+			Minimum poly contact to active edge spacing	:	3 L	<br>
+			Active contact size				:	2 L	<br>
+			Minimum active contact spacing			:	2 L	<br>
+			(on the same active region)					<br>
+			Minimum active contact to active edge spacing	:	1 L	<br>
+			Minimum active contact to metal edge spacing	:	1 L	<br>
+			Minimum active contact to poly edge spacing	:	3 L	<br>
+			Minimum active contact spacing			:	6 L	<br>
+			
+		</p>
+		<br>
+        <p>
+            The complete rules are as given in this <a href="design_rules.pdf">PDF</a>.
+        </p>
+    </body>
+</html>

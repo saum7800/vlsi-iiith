@@ -14,25 +14,29 @@ function init() {
 
     canvas = new fabric.Canvas("myCanvas");
 }
-function makeOnCanvas(comp) {
+function makeOnCanvas(num,colorfill,imgId) {
 
-    if (comp === "metal") {
-
-        k[0]++;
-        metal[k[0]] = new fabric.Rect({
+    //if (comp === "metal") {
+    if (num !== 7) {
+        k[num]++;
+        components[num][k[num]] = new fabric.Rect({
             top: 100,
             left: 100,
             width: 60,
             height: 70,
             lockRotation: true,
-            fill: "rgba(0,0,255,0.7)"
+            fill: colorfill
         });
-        canvas.add(metal[k[0]]);
+        canvas.add(components[num][k[num]]);
         //alert(components[0][0].width);
-        document.getElementById("currentIcon").src = "images/comp1.gif";
-
-
+        document.getElementById("currentIcon").src = imgId;
     }
+    else {
+        alert("not required for this experiment");
+    }
+
+
+    /*}
     else if (comp === "nwell") {
 
         k[1]++;
@@ -109,8 +113,8 @@ function makeOnCanvas(comp) {
         canvas.add(active[k[6]]);
         document.getElementById("currentIcon").src = "images/comp4.gif";
     } else if (comp === "via") {
-        alert("not required for this experiment");
-    }
+        
+    }*/
 }
 
 function spaceBetween(i1, j, i2, l) {
@@ -133,7 +137,27 @@ function overlap(i1, j, i2, l) {
     var down2 = components[i2][l].top + components[i2][l].height;
     var left2 = components[i2][l].left;
     var right2 = components[i2][l].left + components[i2][l].width;
-    if (left1 < left2) {
+    if(left1>=left2)
+    {
+        var t1;
+        t1=left1;
+        left1=left2;
+        left2=t1;
+        var t2;
+        t2=right1;
+        right1=right2;
+        right2=t2;
+        var t3;
+        t3=top1;
+        top1=top2;
+        top2=t3;
+        var t4;
+        t4=down1;
+        down1=down2;
+        down2=t4;
+    }
+    
+    //if (left1 < left2) {
         if (left2 > right1) {
             return false;
         }
@@ -152,7 +176,7 @@ function overlap(i1, j, i2, l) {
             }
             return true;
         }
-    }
+    /*}
     else {
         if (left1 > right2) {
             return false;
@@ -166,7 +190,7 @@ function overlap(i1, j, i2, l) {
         else {
             return true;
         }
-    }
+    }*/
 
 }
 
