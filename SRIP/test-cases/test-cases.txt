@@ -13,4 +13,11 @@ status: fixed
 issue:rotation of the shape should not be allowed.
 status: fixed
 
+issue:"checkDRC" without any components added
+status: fixed
+
+issue:"delete selected component" without selection causing issues
+status: fixed
+
+
 

@@ -40,15 +40,19 @@ Procedure for using the simulator:
 
 6.  Click on the button of any component. New component will appear on the canvas and you may manipulate it's position and size
     in the same way as shown in steps 3,4 and 5.
+
 7.  Make the layout design using the components.
 
-8.  Click on the " Check DRC " button to check if the layout made satisfies the design layout rules correctly.
+8.  If a component is added by mistake that you wish to remove, click on the component you want to remove. 
+    Now click on the "Delete selected component" button.
 
-9.  You will get an alert which will tell you if DRC rules are satisfied or not.
+9.  Click on the " Check DRC " button to check if the layout made satisfies the design layout rules correctly.
 
-10. If DRC rules are not satisfied, you will also get an alert to tell you which specific DRC rule has been violated.
+10. You will get an alert which will tell you if DRC rules are satisfied or not.
 
-11. Click the " clear all " button to start making and testing a new layout.
+11. If DRC rules are not satisfied, you will also get an alert to tell you which specific DRC rule has been violated.
+
+12. Click the " clear all " button to start making and testing a new layout.
 
 -------------------------------------------------------------------------------------------------------------------------------------  
 

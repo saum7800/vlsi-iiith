@@ -13,8 +13,23 @@ var components = [metal, nwell, poly, nselect, contact, pselect, active];
 function init() {
 
     canvas = new fabric.Canvas("myCanvas");
+    for (var i = 0; i < 700; i++) {
+        for (var j = 0; j < 1000; j++) {
+            var circle1 = new fabric.Circle({
+                radius: 2,
+                fill: 'rgba(0,0,0,0.4)',
+                left: j,
+                top: i,
+                selectable: false
+            });
+            canvas.add(circle1);
+            j += 20;
+        }
+        i += 20;
+    }
+
 }
-function makeOnCanvas(num,colorfill,imgId) {
+function makeOnCanvas(num, colorfill, imgId) {
 
     //if (comp === "metal") {
     if (num !== 7) {
@@ -25,7 +40,9 @@ function makeOnCanvas(num,colorfill,imgId) {
             width: 60,
             height: 70,
             lockRotation: true,
-            fill: colorfill
+            fill: colorfill,
+            componentType: num,
+            componentNum: k[num]
         });
         canvas.add(components[num][k[num]]);
         //alert(components[0][0].width);
@@ -34,6 +51,8 @@ function makeOnCanvas(num,colorfill,imgId) {
     else {
         alert("not required for this experiment");
     }
+
+
 
 
     /*}
@@ -137,45 +156,44 @@ function overlap(i1, j, i2, l) {
     var down2 = components[i2][l].top + components[i2][l].height;
     var left2 = components[i2][l].left;
     var right2 = components[i2][l].left + components[i2][l].width;
-    if(left1>=left2)
-    {
+    if (left1 >= left2) {
         var t1;
-        t1=left1;
-        left1=left2;
-        left2=t1;
+        t1 = left1;
+        left1 = left2;
+        left2 = t1;
         var t2;
-        t2=right1;
-        right1=right2;
-        right2=t2;
+        t2 = right1;
+        right1 = right2;
+        right2 = t2;
         var t3;
-        t3=top1;
-        top1=top2;
-        top2=t3;
+        t3 = top1;
+        top1 = top2;
+        top2 = t3;
         var t4;
-        t4=down1;
-        down1=down2;
-        down2=t4;
+        t4 = down1;
+        down1 = down2;
+        down2 = t4;
     }
-    
+
     //if (left1 < left2) {
-        if (left2 > right1) {
-            return false;
-        }
-        else if (down2 < top1) {
-            return false;
-        }
-        else if (down1 < top2) {
-            return false;
+    if (left2 > right1) {
+        return false;
+    }
+    else if (down2 < top1) {
+        return false;
+    }
+    else if (down1 < top2) {
+        return false;
+    }
+    else {
+        if (right2 < left1) {
+            overlapLength = right2 - left2;
         }
         else {
-            if (right2 < left1) {
-                overlapLength = right2 - left2;
-            }
-            else {
-                overlapLength = right1 - left2;
-            }
-            return true;
+            overlapLength = right1 - left2;
         }
+        return true;
+    }
     /*}
     else {
         if (left1 > right2) {
@@ -364,31 +382,62 @@ function NplusPplus(lambda) {//Nselect=3,Pselect=5,active=6
 
 }
 
+function removeCurrent() {
+    let idp1 = 100000;
+    let idp2 = 100000;
+    idp1 = canvas.getActiveObject().componentType;
+    idp2 = canvas.getActiveObject().componentNum;
+    canvas.remove(canvas.getActiveObject());
+    components[idp1].splice(idp2, 1);
+    k[idp1]--;
+    for (var i = idp2; i <= k[idp1]; i++) {
+        components[idp1][i].componentNum--;
+    }
+}
 
+/*function tempf()
+{
+    for(var i=0;i<=k[0];i++)
+    {
+        alert(components[0][i].componentNum);
+    }
+        
+    
+}*/
 
 function checkDRC() {
     var i, j;
-    var lambda = 1000000;
+    var lambda = 1;
     for (i = 0; i < 7; i++) {
         for (j = 0; j <= k[i]; j++) {
             components[i][j].width = components[i][j].width * components[i][j].scaleX;
+            components[i][j].height = components[i][j].height * components[i][j].scaleY;
         }
     }
     //alert(k[0]);
-    for (j = 0; j <= k[0]; j++) {
-        if (metal[j].width < lambda) {
-            lambda = metal[j].width;
-            //alert(lambda);
-        }
+    //for (j = 0; j <= k[0]; j++) {
+    //    if (metal[j].width < lambda) {
+    //        lambda = metal[j].width;
+    //        //alert(lambda);
+    //    }
 
-    }
-    lambda = lambda / 3;
-    lambda--;
+    //}
+
     //alert("lambda");
     var checkMinWidth = minWidth(lambda);
     var checkMosfetLayout = mosfetLayout(lambda);
     var checkNplusPplus = NplusPplus(lambda);
-    if (checkMinWidth === true && checkMosfetLayout === true && checkNplusPplus === true) {
+    var noComponent = true;
+    for (var n = 0; n < 7; n++) {
+        if (k[n] > -1) {
+            noComponent = false;
+            break;
+        }
+    }
+    if (noComponent === true) {
+        alert("no components found");
+    }
+    else if (checkMinWidth === true && checkMosfetLayout === true && checkNplusPplus === true) {
         alert("good job!the layout satisifes the DRC rules");
     }
     else {
@@ -403,7 +452,12 @@ function checkDRC() {
             alert("There appears to a problem with the N-plus and P-plus width and spacing");
         }
     }
-
+    for (i = 0; i < 7; i++) {
+        for (j = 0; j <= k[i]; j++) {
+            components[i][j].width = components[i][j].width / components[i][j].scaleX;
+            components[i][j].height = components[i][j].height / components[i][j].scaleY;
+        }
+    }
 
 }
 
