@@ -35,8 +35,8 @@ function makeOnCanvas(num, colorfill, imgId) {
     if (num !== 7) {
         k[num]++;
         components[num][k[num]] = new fabric.Rect({
-            top: 100,
-            left: 100,
+            top: Math.random()*600 + 50,
+            left: Math.random()*600 + 50,
             width: 60,
             height: 70,
             lockRotation: true,
