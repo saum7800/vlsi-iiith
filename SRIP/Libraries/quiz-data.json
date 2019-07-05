@@ -1,0 +1,279 @@
+{
+    "artciles": [
+        {
+            "quiztitle": "Quiz for Experiment",
+            "containers": "5"
+        },
+        {
+            "q": "Circuit designers need _______ circuits",
+            "option": [
+                "tighter",
+                "smaller layout",
+                "decreased silicon area",
+                "all of the mentioned"
+            ],
+            "answer": "all of the mentioned",
+            "description": " Circuit designers in general prefer tighter, smaller layouts for improved performance and decreased silicon area."
+        },
+        {
+            "q": "Process engineers want ______ process",
+            "option": [
+                "smaller",
+                "tighter",
+                "reproducible",
+                "non reproducible"
+            ],
+            "answer": "reproducible",
+            "description": " Process engineers wants design rules which are controllable and reproducible process. "
+        },
+        {
+            "q": "Design rules does not specify",
+            "option": [
+                "linewidths",
+                "separations",
+                "extensions",
+                "colours"
+            ],
+            "answer": "colours",
+            "description": " Design rules specify line widths, separations and extensions in terms of lambda."
+        },
+        {
+            "q": "The width of n-diffusion and p-diffusion layer should be",
+            "option": [
+                "3λ",
+                "2λ",
+                "λ",
+                "4λ"
+            ],
+            "answer": "2λ",
+            "description": " The width of n-diffusion and p-diffusion should be 2λ according to design rules."
+        },
+        {
+            "q": "What should be the spacing between two diffusion layers?",
+            "option": [
+                "4λ",
+                "λ",
+                "3λ",
+                "2λ"
+            ],
+            "answer": "3λ",
+            "description": " The spacing between two diffusion layers should be 3λ according to design rules and standards."
+        },
+        {
+            "q": "What should be the width of metal 1 and metal 2 layers?",
+            "option": [
+                "3λ, 3λ",
+                "2λ, 3λ",
+                "3λ, 4λ",
+                "4λ, 3λ"
+            ],
+            "answer": "3λ, 4λ",
+            "description": " The width of the metal 1 layer should be 3λ and metal 2 should be 4λ."
+        },
+        {
+            "q": "Implant should extend _______ from all the channels",
+            "option": [
+                "2λ",
+                "3λ",
+                "4λ",
+                "λ"
+            ],
+            "answer": "2λ",
+            "description": " Implant for a n-mos depletion mode transistor should extend minimum of 2λ from the channel in all the directions."
+        },
+        {
+            "q": " Which type of contact cuts are better?",
+            "option": [
+                "buried contacts",
+                "butted contacts",
+                "butted & buried contacts",
+                "none of the mentioned"
+            ],
+            "answer": "buried contacts",
+            "description": " Buried contacts are much better than butted contacts. In butted contacts the two layers are joined together or binded together using adhesive type of material where as in buried contact one layer is interconcted or fitted into another."
+        },
+        {
+            "q": " Which design method occupies or uses lesser area?",
+            "option": [
+                "lambda rules",
+                "micron rules",
+                "layer rule",
+                "source rule"
+            ],
+            "answer": "micron rules",
+            "description": " Micron rules occupies or consumes lesser area. 50% of the area usage can be reduced by using micron rules over lambda rules."
+        },
+        {
+            "q": " Which gives scalable design rules?",
+            "option": [
+                "lambda rules",
+                "micron rules",
+                "layer rules",
+                "thickness rules"
+            ],
+            "answer": "lambda rules",
+            "description": " Lambda rules gives scalable design rules and micron rules gives absolute dimensions."
+        },
+        {
+            "q": " Devices designed with lambda design rules are prone to shorts and opens.",
+            "option": [
+                "true",
+                "false"
+            ],
+            "answer":"false",
+            "description": " Lambda design rules prevents shorting, opens, contact from slipping out of area to be contacted."
+        },
+        {
+            "q": "Diffusion and polysilicon layers are connected together using",
+            "option": [
+                "butting contact",
+                "buried contact",
+                "separate contact",
+                "cannot be connected"
+            ],
+            "answer": "butting contact",
+            "description": " Diffusion and polysilicon layer are joined together using butting contact. In butting contact the two layers are joined or binded together."
+        },
+        {
+            "q": "Which is more complex process?",
+            "option": [
+                "buried contact",
+                "butting contact",
+                "buried & butting contact",
+                "none of the mentioned"
+            ],
+            "answer": "buried contact",
+            "description": " Butting contact is complex process whereas buried contact is simple process because butting contact should be done more carefully to serve well and be strong."
+        },
+        {
+            "q": "Which contact cut occupies smaller area?",
+            "option": [
+                "buried contact",
+                "butting contact",
+                "buried & butting contact",
+                "none of the mentioned "
+            ],
+            "answer": "buried contact",
+            "description": " Buried contact occupies smaller area than butting contact as in buried contacts one layer will be completely within or almost within the another layer."
+        },
+        {
+            "q": "Isolation layer between two metal layers must be thinner.",
+            "option": [
+                "true",
+                "false"
+            ],
+            "answer": "false",
+            "description": " Isolation layer between two metal layers should be thicker. Metal to metal separation is large and is brought about mainly by difficulties in defining metal edges accurately."
+        },
+        {
+            "q": "The oxide layer below the first metal layer is deposited using",
+            "option": [
+                "diffusion method",
+                "chemical vapour deposition",
+                "solid deposition",
+                "scattering method"
+            ],
+            "answer": "chemical vapour deposition",
+            "description": " The oxide layer below the first metal layer is depostied using chemical vapour deposition method. This is a chemical process used to produce high quality high performance solid materials."
+        },
+        {
+            "q": "Which layer is used for power and signal lines?",
+            "option": [
+                "metal",
+                "polysiicon",
+                "n-diffusion",
+                "p-diffusion"
+            ],
+            "answer": "metal",
+            "description": " Metal layers are used for power and signal lines as metals has good thermal and electrical conductivity."
+        },
+        {
+            "q": "Minimum feature size for thick oxide is",
+            "option": [
+                "2λ",
+                "3λ",
+                "4λ",
+                "λ"
+            ],
+            "answer": "3λ",
+            "description": " The minimum feature size for thick oxide is 3λ and minimum separation between thinox regions is also 3λ."
+        },
+        {
+            "q": "Hatching is compatible with",
+            "option": [
+                "monochrome encoding",
+                "bicode encoding",
+                "tricode encoding",
+                "not compatible with any encoding"
+            ],
+            "answer": "monochrome encoding",
+            "description": " Hatching is compatible with monochrome encoding and also may be added to color mask coding. It is designed using closely spaced lines or sticks."
+        },
+        {
+            "q": "Minimum n-well width should be ____ micro meter",
+            "option": [
+                "2",
+                "3",
+                "4",
+                "6"
+            ],
+            "answer": "3",
+            "description": " The minimum width of n-well is 3 micro meter because n-well should be with little thickness and in it p-type devices are formed."
+        },
+        {
+            "q": " The minimum spacing between two n-well is _____ micro meter",
+            "option": [
+                "4",
+                "5",
+                "8",
+                "8.5"
+            ],
+            "answer": "8.5",
+            "description": " The minimum spacing between two n-well is 8.5 micro meter according to the lambda based design rules."
+        },
+        {
+            "q": " Which can bring about variations in threshold voltage?",
+            "option": [
+                "oxide thickness",
+                "ion implantation",
+                "poly variations",
+                "all of the mentioned"
+            ],
+            "answer": "all of the mentioned",
+            "description": " One of the problem in the manufacture using design rule is that variation in threshold voltage occurs. And this is caused by oxide thickness, ion implantation and poly variations."
+        },
+        {
+            "q": " Advantages of design rules are",
+            "option": [
+                "durable",
+                "scalable",
+                "portable",
+                "all of the mentioned"
+            ],
+            "answer": "all of the mentioned",
+            "description": " Some of the advantages of generalised design rules are those are durable, scalable, portable, increases designer efficiency and automatic translation to final layout can be done."
+        },
+        {
+            "q": " Minimum diffusion space is",
+            "option": [
+                "2λ",
+                "3λ",
+                "4λ",
+                "λ"
+            ],
+            "answer": "3λ",
+            "description": " Minimum diffusion space is 3λ to avoid the possibility of their associated regions overlapping and conducting current."
+        },
+        {
+            "q": " Contact cuts should be ____ apart",
+            "option": [
+                "2λ",
+                "3λ",
+                "4λ",
+                "λ"
+            ],
+            "answer": "2λ",
+            "description": " Two contact cuts should be 2λ apart to prevent holes from merging."
+        }
+    ]
+}
